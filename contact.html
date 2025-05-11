@@ -1,95 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Bree Tech Company</title>
-    <link rel="stylesheet" href="assets/css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Bree Holdings</title>
+  <style>
+    :root {
+      --dark-blue: #032449;
+      --gold: #f0c103;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--dark-blue);
+      background-color: var(--white);
+    }
+
+    header {
+      background-color: var(--white);
+      color: var(--dark-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      max-height: 70px;
+    }
+
+    header .contact-info {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--gold);
+      text-align: center;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: var(--dark-blue);
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-details {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem;
+      border: 1px solid var(--dark-blue);
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: var(--gold);
+      color: var(--dark-blue);
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: var(--dark-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/LO.png" alt="Bree Tech Company Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="intro.html"><strong>Welcome</strong></a></li>
-                <li><a href="index.html"><strong>Home</strong></a></li>
-                <li><a href="services.html"><strong>Our Services</strong></a></li>
-                <li><a href="aboutus.html"><strong>About Us</strong></a></li> <!-- Active link -->
-                <li><a href="contact.html" class="active"><strong>Contact</strong></a></li>
-                <li><a href="portfolio.html"><strong>Portfolio</strong></a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="contact-section">
-        <div class="container">
-            <h1>Contact Us</h1>
-            <p>If you have any inquiries or would like more information about Bree Tech Company, our services, or anything else, feel free to get in touch. You can reach us through email, phone, or visit our office in person. We look forward to hearing from you!</p>
+  <header>
+    <img src="logo.PNG" alt="Bree Holdings Logo" />
+    <div class="contact-info">
+      Email: info@breeholdings.com | Contact: +256 790 276170
+    </div>
+  </header>
 
-            <h2>Our Contact Information</h2>
-                 <div class="contact-info">
-                 <p><i class="fa-solid fa-location-dot"></i><strong>Office Address:</strong> Mukisa Mall, Ntinda</p>
-                 <p><i class="fa-solid fa-envelope"></i><strong>Email:</strong> <a href="mailto:info@breetechcompany.com">info@breetechcompany.com</a></p>
-                 <p><i class="fa-brands fa-whatsapp"></i><strong>WhatsApp:</strong> +256753589219</p>
-                 <p><i class="fa-solid fa-phone"></i><strong>Phone:</strong> +256775550738</p>
-                 <p><i class="fa-solid fa-globe"></i><strong>Website:</strong> <a href="https://www.breetechcompany.com">www.breetechcompany.com</a></p></p>
-            </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ventures.html">Ventures</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-            <div class="office-hours">
-                <h3>Office Hours</h3>
-                <p>Our office is open during the following hours:</p>
-                <ul>
-                    <li><strong>Monday to Friday:</strong> 9:00 AM - 5:00 PM</li>
-                    <li><strong>Saturday:</strong> 10:00 AM - 3:00 PM</li>
-                    <li><strong>Sunday:</strong> Closed</li>
-                </ul>
-            </div>
+  <main>
+    <h2>Contact Us</h2>
 
-            <div class="address">
-                <h3>Visit Us at Mukisa Mall, Ntinda</h3>
-                <p>We welcome you to visit our office for more information about Bree Tech Company and our services. Our team is always happy to assist you and answer any questions you may have.</p>
-            </div>
+    <div class="contact-details">
+      <p>Email: info@breeholdings.com</p>
+      <p>Phone: +256 790 276170</p>
+      <p>Address: Kampala, Uganda</p>
+    </div>
 
-            <section class="contact-form">
-                <h2>Contact Us</h2>
-                <form
-                     action="https://formspree.io/f/mdkeenod"
-                     method="POST"
-                >
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-            
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-            
-                    <label for="contact">Contact Information (Phone/Address):</label>
-                    <input type="text" id="contact" name="contact" required>
-            
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-            
-                    <button type="submit">Submit</button>
-                </form>
-            </section>          
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="text" name="subject" placeholder="Subject" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
 
-            <h2>Follow Us on Social Media</h2>
-<div class="social-media">
-    <a href="https://www.facebook.com/breetechcompany" class="facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-    <a href="https://twitter.com/breetechcompany" class="twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-    <a href="https://instagram.com/breetechcompany" class="instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/company/breetechcompany" class="linkedin" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-    <a href="https://wa.me/256770020007" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://www.youtube.com/@ms.mukisa" class="youtube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-</div>
-            
-        </div>
-    </section>
+  <footer>
+    &copy; 2025 Bree Holdings. All rights reserved.
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Bree Tech Company | All Rights Reserved</p>
-    </footer>
 </body>
 </html>
