@@ -1,0 +1,135 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #96c8f1;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: white; /* Match the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.logo img {
+    margin-right: 5px; /* Space between logo and text */
+    height: 20vh;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Algerian', serif;
+    font-size: 50px;
+    color: #0a1f44; /* Dark blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    text-align: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0a1f44;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #09af5f; /* Gold for hover/active */
+}
+
+
+/* Hero Section */
+#hero {
+    background: url(/assets/images/web.webp) center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #f9a825;
+}
+
+.cta-button {
+    background-color: #f9a825;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #c17900;
+}
+
+/* About Section */
+#about {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+/* Services Section */
+#services {
+    background-color: #96c8f1;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service {
+    background-color: white;
+    padding: 30px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #041a2f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
