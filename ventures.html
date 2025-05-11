@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ventures - Bree Holdings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --dark-blue: #032449;
+      --gold: #f0c103;
+      --white: #ffffff;
+      --gray-bg: #f9f9f9;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: var(--dark-blue);
+      background-color: var(--white);
+    }
+
+    header {
+      background-color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      max-height: 70px;
+    }
+
+    .contact-info {
+      text-align: right;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    nav {
+      background-color: var(--gold);
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    nav a {
+      color: var(--dark-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--white);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .venture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .venture-card {
+      background-color: var(--gray-bg);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease;
+    }
+
+    .venture-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .venture-title {
+      color: var(--gold);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .venture-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: var(--dark-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.PNG" alt="Bree Holdings Logo" />
+    <div class="contact-info">
+      Email: info@breeholdings.com<br />
+      Contact: +256 790 276170
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="ventures.html">Ventures</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h2>Our Ventures</h2>
+
+    <div class="venture-grid">
+
+      <div class="venture-card">
+        <div class="venture-title">Breeford University</div>
+        <p class="venture-desc">
+          A premier academic institution dedicated to empowering future leaders through innovation, critical thinking, and excellence in higher education.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Breeford Academy</div>
+        <p class="venture-desc">
+          A modern school offering foundational and advanced learning environments that inspire academic success and holistic development.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Signature Luxe</div>
+        <p class="venture-desc">
+          A high-end clothing brand that champions style, class, and individuality with elegant and timeless designs for the fashion-conscious.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Cluck & Crave</div>
+        <p class="venture-desc">
+          A food venture focused on delicious fried chicken, hearty meals, and unforgettable experiences for food lovers everywhere.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">The Car Wash</div>
+        <p class="venture-desc">
+          A reliable and tech-driven car care service offering subscription packages, appointments, and quality detailing.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Bree Prints</div>
+        <p class="venture-desc">
+          A creative and efficient printing service providing branding, marketing, and publishing solutions for businesses and individuals.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Bree Interior & Designs</div>
+        <p class="venture-desc">
+          Transforming spaces into beautiful, functional, and inspiring environments through modern interior design solutions.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Bree’s Massage & Beauty Parlor</div>
+        <p class="venture-desc">
+          A luxury wellness center offering massages, facials, and beauty treatments designed to refresh, relax, and rejuvenate.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Bree Catering Services</div>
+        <p class="venture-desc">
+          Professional catering for events, parties, and institutions—delivering flavor, quality, and exceptional hospitality.
+        </p>
+      </div>
+
+      <div class="venture-card">
+        <div class="venture-title">Bree Bridal Clothing</div>
+        <p class="venture-desc">
+          A bridal fashion brand that offers elegant gowns and accessories tailored to celebrate love and beauty on your special day.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Bree Holdings. All rights reserved.
+  </footer>
+
+</body>
+</html>
