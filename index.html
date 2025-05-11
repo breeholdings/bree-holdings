@@ -6,8 +6,8 @@
   <title>Bree Holdings</title>
   <style>
     :root {
-      --dark-blue: #002b5c;
-      --gold: #ffcc00;
+      --dark-blue: #032449;
+      --gold: #f0c103;
       --white: #ffffff;
     }
 
@@ -19,15 +19,23 @@
     }
 
     header {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      padding: 1.5rem;
-      text-align: center;
+      background-color: var(--white);
+      color: var(--dark-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    header img {
+      max-height: 100px;
+    }
+
+    header .contact-info {
+      font-size: 1rem;
+      font-weight: 500;
     }
 
     nav {
@@ -41,6 +49,14 @@
       text-decoration: none;
       margin: 0 1rem;
       font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .hero {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
     }
 
     main {
@@ -70,17 +86,19 @@
     }
 
     @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
       nav a {
         display: block;
         margin: 10px 0;
       }
 
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      main {
-        padding: 1rem;
+      .hero {
+        max-height: 250px;
       }
     }
   </style>
@@ -88,9 +106,10 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="Bree Holdings Logo" style="height: 60px;" />
-    <h1>Bree Holdings</h1>
-    <p>Shaping the Future Through Innovation & Vision</p>
+    <img src="Bree Logo 2.PNG" alt="Bree Holdings Logo" />
+    <div class="contact-info">
+      Email: info@breeholdings.com | Contact: +256 790 276170
+    </div>
   </header>
 
   <nav>
@@ -100,15 +119,18 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <img class="hero" src="hero.jpg" alt="Bree Holdings Hero Banner" />
+
   <main>
     <section>
       <h2>About Bree Holdings</h2>
+      <p>Bree Holdings – Innovating Across Industries</p>
       <p>Bree Holdings is a dynamic and forward-thinking company dedicated to excellence across multiple industries, including education, fashion, food, automotive services, and design. Founded by Mukisa Brendah Rebecca, Bree Holdings embodies innovation, resilience, and a commitment to creating impactful ventures that transform lives.</p>
     </section>
 
     <section>
-      <h2>Our Mission & Vision</h2>
-      <p>At Bree Holdings, we believe in innovation, quality, and customer satisfaction. Our goal is to become a household name by delivering exceptional products and services across all our ventures while staying true to our slogan: "Heaven's Vision, Earth's Impact"</p>
+      <h2>Our Focus</h2>
+      <p>At Bree Holdings, we believe in innovation, quality, and customer satisfaction. Our goal is to become a household name by delivering exceptional products and services across all our ventures while staying true to our slogan.</p>
     </section>
 
     <section>
