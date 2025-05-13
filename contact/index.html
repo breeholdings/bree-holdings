@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - Bree Holdings</title>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -92,6 +92,14 @@
       font-size: 1.05rem;
     }
 
+    .operating-hours {
+      margin-top: 1rem;
+      font-size: 1rem;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
     .social-media {
       margin-top: 2rem;
     }
@@ -123,7 +131,8 @@
     }
 
     .contact-form input,
-    .contact-form textarea {
+    .contact-form textarea,
+    .contact-form select {
       padding: 0.75rem;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -147,12 +156,83 @@
       background-color: #ddb100;
     }
 
+    .map-container {
+      margin-top: 2rem;
+      width: 100%;
+      height: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     footer {
       background-color: var(--dark-blue);
       color: var(--white);
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
       text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin: 0.3rem 0;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .social-icons a {
+      color: var(--white);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+
+    .newsletter input[type="email"] {
+      padding: 0.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: var(--gold);
+      border: none;
+      color: var(--dark-blue);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-top: 0.5rem;
+      }
     }
 
     @media (max-width: 768px) {
@@ -182,11 +262,11 @@
   </header>
 
   <nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/ventures/">Ventures</a>
-  <a href="/contact/">Contact</a>
-</nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/ventures/">Ventures</a>
+    <a href="/contact/">Contact</a>
+  </nav>
 
   <main>
     <h2>Contact Us</h2>
@@ -194,7 +274,13 @@
       <div class="contact-details">
         <p><strong>Email:</strong> info@breeholdings.com</p>
         <p><strong>Phone:</strong> +256 790 276170</p>
-        <p><strong>Address:</strong> Kampala, Uganda</p>
+        <p><strong>Address:</strong> Mukisa Mall, along Ntinda-Bukoto Road, Kampala, Uganda</p>
+
+        <div class="operating-hours">
+          <strong>Operating Hours:</strong><br />
+          Mon - Fri: 9:00 AM – 5:00 PM<br />
+          Sat: 9:00 AM – 3:00 PM
+        </div>
 
         <div class="social-media">
           <h3>Connect With Us</h3>
@@ -208,16 +294,61 @@
       <form class="contact-form">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
+        <select name="inquiry" required>
+          <option value="">Select Inquiry Type</option>
+          <option value="general">General</option>
+          <option value="business">Business Partnership</option>
+          <option value="press">Press</option>
+        </select>
         <input type="text" name="subject" placeholder="Subject" required />
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
+
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.9493386455372!2d32.6034167!3d0.3577137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbc1cfbe68d65%3A0x3d14412c1a1476b5!2sMukisa%20Mall%2C%20Ntinda%20Bukoto%20Rd%2C%20Kampala%2C%20Uganda!5e0!3m2!1sen!2sug!4v1715700000000" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Bree Holdings. All rights reserved.
-  </footer>
+    <div class="footer-section footer-links">
+      <h4>Quick Links</h4>
+      <a href="/team/">Team</a>
+      <a href="/News/">News</a>
+      <a href="/Testimonies/">Testimonies</a>
+    </div>
 
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: info@breeholdings.com</p>
+      <p>Phone: +256 790 276170</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h4>Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email address" required />
+        <br />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </footer>
+  
 </body>
 </html>
