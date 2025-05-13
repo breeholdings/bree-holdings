@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ventures - Bree Holdings</title>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -72,45 +68,118 @@
 
     h2 {
       text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
+      font-size: 2.4rem;
+      margin-bottom: 2.5rem;
     }
 
     .venture-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
     .venture-card {
       background-color: var(--gray-bg);
       border-radius: 12px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
       transition: transform 0.3s ease;
     }
 
     .venture-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+    }
+
+    .venture-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #ccc;
+    }
+
+    .venture-content {
+      padding: 1.5rem;
+      flex-grow: 1;
     }
 
     .venture-title {
       color: var(--gold);
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
     }
 
     .venture-desc {
       font-size: 1rem;
       line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .learn-more {
+      display: inline-block;
+      color: var(--dark-blue);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .learn-more:hover {
+      color: var(--gold);
     }
 
     footer {
       background-color: var(--dark-blue);
       color: var(--white);
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
       text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
+    }
+
+    .footer-section h4 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin: 0.3rem 0;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .social-icons a {
+      color: var(--white);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--gold);
+    }
+
+    .newsletter input[type="email"] {
+      padding: 0.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: var(--gold);
+      border: none;
+      color: var(--dark-blue);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -136,100 +205,173 @@
   </header>
 
   <nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/ventures/">Ventures</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/ventures/">Ventures</a>
+    <a href="/contact/">Contact</a>
+  </nav>
 
   <main>
     <h2>Our Ventures</h2>
-
     <div class="venture-grid">
 
+      <!-- Template for each venture -->
       <div class="venture-card">
-        <div class="venture-title">Breeford University</div>
-        <p class="venture-desc">
-          A premier academic institution dedicated to empowering future leaders through innovation, critical thinking, and excellence in higher education.
-        </p>
+        <img src="/university.PNG" alt="Breeford University" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Breeford University</div>
+          <p class="venture-desc">
+            A premier academic institution dedicated to empowering future leaders through innovation, critical thinking, and excellence in higher education.
+          </p>
+          <a class="learn-more" href="/ventures/breeford-university.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Breeford Academy</div>
-        <p class="venture-desc">
-          A modern school offering foundational and advanced learning environments that inspire academic success and holistic development.
-        </p>
+        <img src="/academy.png" alt="Breeford Academy" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Breeford Academy</div>
+          <p class="venture-desc">
+            A modern school offering foundational and advanced learning environments that inspire academic success and holistic development.
+          </p>
+          <a class="learn-more" href="/ventures/breeford-academy.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Signature Luxe</div>
-        <p class="venture-desc">
-          A high-end clothing brand that champions style, class, and individuality with elegant and timeless designs for the fashion-conscious.
-        </p>
+        <img src="/signature.PNG" alt="Signature Luxe" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Signature Luxe</div>
+          <p class="venture-desc">
+            A high-end clothing brand that champions style, class, and individuality with elegant and timeless designs for the fashion-conscious.
+          </p>
+          <a class="learn-more" href="/ventures/signature-luxe.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Cluck & Crave</div>
-        <p class="venture-desc">
-          A food venture focused on delicious fried chicken, hearty meals, and unforgettable experiences for food lovers everywhere.
-        </p>
+        <img src="/cluck.PNG" alt="Cluck & Crave" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Cluck & Crave</div>
+          <p class="venture-desc">
+            A food venture focused on delicious fried chicken, hearty meals, and unforgettable experiences for food lovers everywhere.
+          </p>
+          <a class="learn-more" href="/ventures/cluck-and-crave.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">The Car Wash</div>
-        <p class="venture-desc">
-          A reliable and tech-driven car care service offering subscription packages, appointments, and quality detailing.
-        </p>
-      </div>
-      
-      <div class="venture-card">
-        <div class="venture-title">Bree Tech Company</div>
-        <p class="venture-desc">
-          Tech solution providers specializing in web development, digital marketing, and business branding.
-        </p>
+        <img src="/car.PNG" alt="The Car Wash" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">The Car Wash</div>
+          <p class="venture-desc">
+            A reliable and tech-driven car care service offering subscription packages, appointments, and quality detailing.
+          </p>
+          <a class="learn-more" href="/ventures/the-car-wash.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Bree Prints</div>
-        <p class="venture-desc">
-          A creative and efficient printing service providing branding, marketing, and publishing solutions for businesses and individuals.
-        </p>
+        <img src="/tech.PNG" alt="Bree Tech Company" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree Tech Company</div>
+          <p class="venture-desc">
+            Tech solution providers specializing in web development, digital marketing, and business branding.
+          </p>
+          <a class="learn-more" href="/ventures/bree-tech.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Bree Interior & Designs</div>
-        <p class="venture-desc">
-          Transforming spaces into beautiful, functional, and inspiring environments through modern interior design solutions.
-        </p>
+        <img src="/prints.PNG" alt="Bree Prints" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree Prints</div>
+          <p class="venture-desc">
+            A creative and efficient printing service providing branding, marketing, and publishing solutions for businesses and individuals.
+          </p>
+          <a class="learn-more" href="/ventures/bree-prints.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Bree’s Massage & Beauty Parlor</div>
-        <p class="venture-desc">
-          A luxury wellness center offering massages, facials, and beauty treatments designed to refresh, relax, and rejuvenate.
-        </p>
+        <img src="/interior.PNG" alt="Bree Interior & Designs" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree Interior & Designs</div>
+          <p class="venture-desc">
+            Transforming spaces into beautiful, functional, and inspiring environments through modern interior design solutions.
+          </p>
+          <a class="learn-more" href="/ventures/bree-interior.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Bree Catering Services</div>
-        <p class="venture-desc">
-          Professional catering for events, parties, and institutions—delivering flavor, quality, and exceptional hospitality.
-        </p>
+        <img src="/massage.PNG" alt="Bree’s Massage & Beauty Parlor" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree’s Massage & Beauty Parlor</div>
+          <p class="venture-desc">
+            A luxury wellness center offering massages, facials, and beauty treatments designed to refresh, relax, and rejuvenate.
+          </p>
+          <a class="learn-more" href="/ventures/bree-massage.html">Learn more →</a>
+        </div>
       </div>
 
       <div class="venture-card">
-        <div class="venture-title">Bree Bridal Clothing</div>
-        <p class="venture-desc">
-          A bridal fashion brand that offers elegant gowns and accessories tailored to celebrate love and beauty on your special day.
-        </p>
+        <img src="/catering.PNG" alt="Bree Catering Services" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree Catering Services</div>
+          <p class="venture-desc">
+            Professional catering for events, parties, and institutions—delivering flavor, quality, and exceptional hospitality.
+          </p>
+          <a class="learn-more" href="/ventures/bree-catering.html">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="venture-card">
+        <img src="/bridal.PNG" alt="Bree Bridal Clothing" class="venture-img">
+        <div class="venture-content">
+          <div class="venture-title">Bree Bridal Clothing</div>
+          <p class="venture-desc">
+            A bridal fashion brand that offers elegant gowns and accessories tailored to celebrate love and beauty on your special day.
+          </p>
+          <a class="learn-more" href="/ventures/bree-bridal.html">Learn more →</a>
+        </div>
       </div>
 
     </div>
   </main>
 
   <footer>
-    &copy; 2025 Bree Holdings. All rights reserved.
+    <div class="footer-section footer-links">
+      <h4>Quick Links</h4>
+      <a href="/team/">Team</a>
+      <a href="/News/">News</a>
+      <a href="/Testimonies/">Testimonies</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: info@breeholdings.com</p>
+      <p>Phone: +256 790 276170</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h4>Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email address" required />
+        <br />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
   </footer>
 
 </body>
