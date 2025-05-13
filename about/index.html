@@ -1,216 +1,330 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us - Bree Holdings</title>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    :root {
-      --dark-blue: #032449;
-      --gold: #f0c103;
-      --white: #ffffff;
-      --gray-bg: #f9f9f9;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: var(--dark-blue);
-      background-color: var(--white);
-    }
-
-    header {
-      background-color: var(--white);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    header img {
-      max-height: 70px;
-    }
-
-    .contact-info {
-      text-align: right;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    nav {
-      background-color: var(--gold);
-      display: flex;
-      justify-content: center;
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Us - Bree Holdings</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      :root {
+        --dark-blue: #032449;
+        --gold: #f0c103;
+        --white: #ffffff;
+        --gray-bg: #f9f9f9;
+      }
+  
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        color: var(--dark-blue);
+        background-color: var(--white);
+      }
+  
+      header {
+        background-color: var(--white);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+      }
+  
+      header img {
+        max-height: 70px;
+      }
+  
+      .contact-info {
+        text-align: right;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+  
+      nav {
+        background-color: var(--gold);
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem 0;
+      }
+  
+      nav a {
+        color: var(--dark-blue);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+      }
+  
+      nav a:hover {
+        color: var(--white);
+      }
+  
+      main {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+  
+      h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
+  
+      .about-container {
+        background-color: var(--gray-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+  
+      .section {
+        margin-bottom: 2.5rem;
+      }
+  
+      .section h3 {
+        color: var(--gold);
+        font-size: 1.6rem;
+        margin-bottom: 0.75rem;
+      }
+  
+      .section p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin: 0;
+      }
+  
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+  
+      .value-item {
+        background-color: var(--white);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 5px solid var(--gold);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+  
+      .value-item h4 {
+        margin: 0 0 0.5rem;
+      }
+  
+      .ceo-quote {
+        font-style: italic;
+        background-color: var(--white);
+        border-left: 4px solid var(--gold);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+  
+      .timeline {
+        background-color: var(--white);
+        padding: 1rem;
+        border-left: 4px solid var(--gold);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+  
+      footer {
+      background-color: var(--dark-blue);
+      color: var(--white);
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 2rem;
-      padding: 1rem 0;
+      text-align: center;
     }
 
-    nav a {
-      color: var(--dark-blue);
+    .footer-section h4 {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: var(--white);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
+      display: block;
+      margin: 0.3rem 0;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .social-icons a {
+      color: var(--white);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: var(--white);
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .about-container {
-      background-color: var(--gray-bg);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    .section h3 {
+    .social-icons a:hover {
       color: var(--gold);
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
     }
 
-    .section p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin: 0;
+    .newsletter input[type="email"] {
+      padding: 0.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
     }
 
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: var(--gold);
+      border: none;
+      color: var(--dark-blue);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
     }
-
-    .value-item {
-      background-color: var(--white);
-      padding: 1rem;
-      border-radius: 8px;
-      border-left: 5px solid var(--gold);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .value-item h4 {
-      margin: 0 0 0.5rem;
-    }
-
-    footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
+  
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          text-align: center;
+        }
+  
+        .contact-info {
+          margin-top: 0.5rem;
+        }
       }
-
-      .contact-info {
-        margin-top: 0.5rem;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="/logo.PNG" alt="Bree Holdings Logo" />
-    <div class="contact-info">
-      Email: info@breeholdings.com<br />
-      Contact: +256 790 276170
-    </div>
-  </header>
-
-  <nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/ventures/">Ventures</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
-  <main>
-    <h2>About Us</h2>
-
-    <div class="about-container">
-      <div class="section">
-        <h3>Who We Are</h3>
-        <p>
-          Bree Holdings is a visionary parent company committed to nurturing and growing innovative ventures across diverse industries. Rooted in excellence and driven by purpose, we aim to shape a future where business and impact align to uplift communities and redefine possibilities.
-        </p>
+    </style>
+  </head>
+  <body>
+  
+    <header>
+      <img src="/logo.PNG" alt="Bree Holdings Logo" />
+      <div class="contact-info">
+        Email: info@breeholdings.com<br />
+        Contact: +256 790 276170
       </div>
-
-      <div class="section">
-        <h3>Our Vision</h3>
-        <p>
-          To become a leading multi-venture brand in Africa known for excellence, integrity, and innovation — influencing industries and empowering lives.
-        </p>
-      </div>
-
-      <div class="section">
-        <h3>Our Mission</h3>
-        <p>
-          To incubate, invest in, and scale transformative ideas by leveraging technology, creativity, and leadership that inspires sustainable growth and community empowerment.
-        </p>
-      </div>
-
-      <div class="section">
-        <h3>Our Values</h3>
-        <div class="values-grid">
-          <div class="value-item">
-            <h4>Innovation</h4>
-            <p>We champion bold thinking and embrace forward-looking ideas that drive transformation.</p>
+    </header>
+  
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  
+    <main>
+      <h2>About Us</h2>
+  
+      <div class="about-container">
+        <div class="section">
+          <h3>Who We Are</h3>
+          <p>
+            Bree Holdings is a visionary parent company committed to nurturing and growing innovative ventures across diverse industries. Rooted in excellence and driven by purpose, we aim to shape a future where business and impact align to uplift communities and redefine possibilities.
+          </p>
+        </div>
+  
+        <div class="section">
+          <h3>Our Vision</h3>
+          <p>
+            To become a leading multi-venture brand in Africa known for excellence, integrity, and innovation — influencing industries and empowering lives.
+          </p>
+        </div>
+  
+        <div class="section">
+          <h3>Our Mission</h3>
+          <p>
+            To incubate, invest in, and scale transformative ideas by leveraging technology, creativity, and leadership that inspires sustainable growth and community empowerment.
+          </p>
+        </div>
+  
+        <div class="section">
+          <h3>Our Story</h3>
+          <div class="timeline">
+            <p>
+              Bree Holdings was founded out of a simple yet bold dream — to build a parent company that would unify purpose-driven ventures under one roof. What began as a passion project in 2021 quickly evolved into a dynamic group of brands across sectors. From humble beginnings to launching disruptive businesses, Bree Holdings continues to write a story of impact, innovation, and transformation — one venture at a time.
+            </p>
           </div>
-          <div class="value-item">
-            <h4>Integrity</h4>
-            <p>Honesty, transparency, and ethical conduct guide every decision we make.</p>
+        </div>
+  
+        <div class="section">
+          <h3>Our Values</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <h4>Innovation</h4>
+              <p>We champion bold thinking and embrace forward-looking ideas that drive transformation.</p>
+            </div>
+            <div class="value-item">
+              <h4>Integrity</h4>
+              <p>Honesty, transparency, and ethical conduct guide every decision we make.</p>
+            </div>
+            <div class="value-item">
+              <h4>Excellence</h4>
+              <p>We strive for distinction and deliver quality in everything we do.</p>
+            </div>
+            <div class="value-item">
+              <h4>Community</h4>
+              <p>We are dedicated to making a positive impact in the communities we serve.</p>
+            </div>
+            <div class="value-item">
+              <h4>Leadership</h4>
+              <p>We lead by example and empower others to rise and thrive.</p>
+            </div>
           </div>
-          <div class="value-item">
-            <h4>Excellence</h4>
-            <p>We strive for distinction and deliver quality in everything we do.</p>
-          </div>
-          <div class="value-item">
-            <h4>Community</h4>
-            <p>We are dedicated to making a positive impact in the communities we serve.</p>
-          </div>
-          <div class="value-item">
-            <h4>Leadership</h4>
-            <p>We lead by example and empower others to rise and thrive.</p>
+        </div>
+  
+        <div class="section">
+          <h3>Message from Our Group CEO</h3>
+          <div class="ceo-quote">
+            “At Bree Holdings, we don’t just build businesses — we build legacies. Our commitment is to create ventures that inspire, serve, and uplift. We believe in vision backed by action, innovation led by purpose, and growth rooted in values.”<br><br>
+            <strong>— Group CEO, Bree Holdings</strong>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-  <a href="/team/"> Meet Our Team</a>
+  
+      <p style="text-align: center; margin-top: 2rem;">
+        <a href="/team/" style="color: var(--dark-blue); font-weight: bold;">&#8594; Meet Our Team</a>
+      </p>
+    </main>
 
   <footer>
-    &copy; 2025 Bree Holdings. All rights reserved.
+    <div class="footer-section footer-links">
+      <h4>Quick Links</h4>
+      <a href="/team/">Team</a>
+      <a href="/News/">News</a>
+      <a href="/Testimonies/">Testimonies</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contact Us</h4>
+      <p>Email: info@breeholdings.com</p>
+      <p>Phone: +256 790 276170</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h4>Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email address" required />
+        <br />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
   </footer>
 
 </body>
