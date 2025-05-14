@@ -291,19 +291,32 @@
         </div>
       </div>
 
-      <form class="contact-form" action="handle-form.php" method="POST">
+      <form class="contact-form" onsubmit="handleFakeSubmit(event)">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
-        <select name="inquiry_type" required>
-          <option value="">-- Select Inquiry Type --</option>
+        <input type="text" name="subject" placeholder="Subject" required />
+      
+        <select name="inquiry-type" required>
+          <option value="" disabled selected>Select Inquiry Type</option>
           <option value="general">General</option>
           <option value="business">Business Partnership</option>
           <option value="press">Press</option>
         </select>
-        <input type="text" name="subject" placeholder="Subject" required />
+      
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
+      
+        <p id="fakeSuccess" style="display:none; color:green; font-weight:600;">
+          ✅ Message sent thank you.
+        </p>
       </form>
+      
+      <script>
+        function handleFakeSubmit(e) {
+          e.preventDefault();
+          document.getElementById('fakeSuccess').style.display = 'block';
+        }
+      </script>      
 
     <div class="map-container">
       <iframe 
