@@ -125,60 +125,66 @@
     }
 
     footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      padding: 2rem 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    .footer-section h4 {
-      margin-bottom: 1rem;
-    }
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
 
-    .footer-links a {
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin: 0.3rem 0;
-    }
+.footer-section h4 {
+  margin-bottom: 1rem;
+}
 
-    .footer-links a:hover {
-      color: var(--gold);
-    }
+.footer-links a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  margin: 0.3rem 0;
+}
 
-    .social-icons a {
-      color: var(--white);
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
+.footer-links a:hover {
+  color: var(--gold);
+}
 
-    .social-icons a:hover {
-      color: var(--gold);
-    }
+.social-icons a {
+  color: var(--white);
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
 
-    .newsletter input[type="email"] {
-      padding: 0.5rem;
-      width: 80%;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 0.5rem;
-    }
+.social-icons a:hover {
+  color: var(--gold);
+}
 
-    .newsletter button {
-      padding: 0.5rem 1rem;
-      background-color: var(--gold);
-      border: none;
-      color: var(--dark-blue);
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+.newsletter input[type="email"] {
+  padding: 0.5rem;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
 
-    /* Copyright styling */
+.newsletter button {
+  padding: 0.5rem 1rem;
+  background-color: var(--gold);
+  border: none;
+  color: var(--dark-blue);
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Copyright styling */
 footer .footer-copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 2rem;
@@ -186,22 +192,18 @@ footer .footer-copyright {
   font-size: 0.9rem;
   color: #ccc;
 }
-    
-     @media (max-width: 768px) {
-      .contact-container {
-        flex-direction: column;
-      }
 
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
+@media (max-width: 768px) {
+  .contact-container,
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      .contact-info {
-        margin-top: 0.5rem;
-      }
+  .contact-info {
+    margin-top: 0.5rem;
+  }
 }
-
     
   </style>
 </head>
