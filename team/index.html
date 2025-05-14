@@ -226,23 +226,23 @@
     @media (max-width: 768px) {
       header {
         flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-info {
-        margin-top: 0.5rem;
-        text-align: center;
-      }
-
-      .cta {
-        margin-top: 1rem;
-      }
-
-      nav {
-        flex-direction: row;
+        align-items: flex-start;
         gap: 1rem;
-        padding: 1rem 0;
       }
+
+      .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .contact-info,
+      .cta {
+        text-align: left;
+        width: 100%;
+      }
+
       .partner-btn {
         padding: 10px 20px;
         font-size: 14px;
