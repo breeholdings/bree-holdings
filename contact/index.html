@@ -291,11 +291,11 @@
         </div>
       </div>
 
-      <form class="contact-form">
+      <form class="contact-form" action="handle-form.php" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
-        <select name="inquiry" required>
-          <option value="">Select Inquiry Type</option>
+        <select name="inquiry_type" required>
+          <option value="">-- Select Inquiry Type --</option>
           <option value="general">General</option>
           <option value="business">Business Partnership</option>
           <option value="press">Press</option>
@@ -304,7 +304,6 @@
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-    </div>
 
     <div class="map-container">
       <iframe 
@@ -349,6 +348,7 @@
       </form>
     </div>
   </footer>
-  
+
+
 </body>
 </html>
