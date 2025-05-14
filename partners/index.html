@@ -36,12 +36,14 @@
 
     header img {
       max-height: 70px;
+      width: auto;
     }
 
     .contact-info {
       text-align: right;
       font-size: 0.95rem;
       font-weight: 500;
+      margin-left: 1rem;
     }
 
     .cta {
@@ -100,9 +102,9 @@
 
     .download-section {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
       gap: 1rem;
+      align-items: center;
     }
 
     .download-link {
@@ -183,6 +185,44 @@
 
       .contact-info {
         margin-top: 0.5rem;
+        text-align: center;
+      }
+
+      .cta {
+        margin-top: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+      }
+
+      main {
+        padding: 1rem;
+        margin-top: 2rem;
+      }
+
+      .download-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      footer {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .partner-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+
+      .download-link {
+        font-size: 14px;
+        padding: 10px 18px;
       }
     }
   </style>
@@ -190,7 +230,7 @@
 <body>
 
   <header>
-    <img src="logo.PNG" alt="Bree Holdings Logo" />
+    <img src="/logo.PNG" alt="Bree Holdings Logo" />
     <div class="contact-info">
       Email: info@breeholdings.com<br />
       Contact: +256 790 276170
@@ -207,8 +247,8 @@
     <a href="/contact/">Contact</a>
   </nav>
 
-  <main style="padding: 2rem; max-width: 900px; margin: auto; line-height: 1.7;">
-    <h1 style="color: var(--dark-blue); text-align: center;">Bree Holdings Partnership Program</h1>
+  <main>
+    <h1>Bree Holdings Partnership Program</h1>
     <p>
       At <strong>Bree Holdings</strong>, we believe in building powerful, lasting relationships that foster growth and innovation across industries. Our partnership program is designed to collaborate with individuals, startups, and organizations that align with our mission of advancing cutting-edge ventures in technology, education, lifestyle, and beyond.
     </p>
@@ -219,8 +259,8 @@
       If you're ready to grow with us and create meaningful impact, download our partnership documents below to get started.
     </p>
   
-    <section style="margin-top: 2rem;">
-      <h2 style="color: var(--gold);">Download Partnership Documents</h2>
+    <section>
+      <h2>Download Partnership Documents</h2>
       <div class="download-section">
         <a href="/docs/partnership-guidelines.pdf" class="download-link" download>Download Partnership Guidelines</a>
         <a href="/docs/nda-agreement.pdf" class="download-link" download>Download NDA Agreement</a>
