@@ -28,27 +28,25 @@
     header {
       background-color: var(--white);
       padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      gap: 1rem;
     }
 
     header img {
       max-height: 70px;
     }
 
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
     .contact-info {
-      text-align: right;
       font-size: 0.95rem;
       font-weight: 500;
+      text-align: right;
     }
 
     .cta {
@@ -79,7 +77,6 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -159,7 +156,6 @@
       color: var(--white);
       padding: 2rem 1rem 1rem 1rem;
       text-align: center;
-      overflow-x: hidden;
     }
 
     .footer-container {
@@ -224,35 +220,18 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      header {
+      .header-content {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      .header-right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-        width: 100%;
-      }
-
-      .contact-info,
-      .cta {
-        text-align: left;
-        width: 100%;
-      }
-
-      .partner-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-        width: 100%;
+        align-items: center;
         text-align: center;
       }
 
-      nav {
-        gap: 1rem;
-        flex-direction: column;
+      .contact-info {
+        margin: 0.5rem 0;
+      }
+
+      body {
+        font-size: 14px;
       }
 
       nav a {
@@ -294,13 +273,20 @@
         font-size: 0.8rem;
       }
     }
+
+    @media (max-width: 480px) {
+      .partner-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="/logo.PNG" alt="Bree Holdings Logo" />
-    <div class="header-right">
+    <div class="header-content">
+      <img src="/logo.PNG" alt="Bree Holdings Logo" />
       <div class="contact-info">
         Email: info@breeholdings.com<br />
         Contact: +256 790 276170
@@ -320,10 +306,8 @@
 
   <main>
     <h2>Meet Our Team</h2>
-
     <div class="team-grid">
-      <div class="team-card">
-        <img src="/brendah.jpg" alt="CEO Photo" class="team-photo" />
+      <img src="/brendah.jpg" alt="CEO Photo" class="team-photo" />
         <div class="team-name">Mukisa Brendah Rebecca</div>
         <div class="team-role">Chief Executive Officer</div>
         <p class="team-bio">Visionary leader and founder of Bree Holdings, driving innovation and excellence across all ventures.</p>
