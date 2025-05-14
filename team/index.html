@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Team - Bree Holdings</title>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -125,86 +125,128 @@
     }
 
     footer {
-  background-color: var(--dark-blue);
-  color: var(--white);
-  padding: 2rem 1rem 1rem 1rem;
-  text-align: center;
-  overflow-x: hidden;
-}
+      background-color: var(--dark-blue);
+      color: var(--white);
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      overflow-x: hidden;
+    }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
 
-.footer-section h4 {
-  margin-bottom: 1rem;
-}
+    .footer-section h4 {
+      margin-bottom: 1rem;
+    }
 
-.footer-links a {
-  color: var(--white);
-  text-decoration: none;
-  display: block;
-  margin: 0.3rem 0;
-}
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      display: block;
+      margin: 0.3rem 0;
+    }
 
-.footer-links a:hover {
-  color: var(--gold);
-}
+    .footer-links a:hover {
+      color: var(--gold);
+    }
 
-.social-icons a {
-  color: var(--white);
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
+    .social-icons a {
+      color: var(--white);
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
 
-.social-icons a:hover {
-  color: var(--gold);
-}
+    .social-icons a:hover {
+      color: var(--gold);
+    }
 
-.newsletter input[type="email"] {
-  padding: 0.5rem;
-  width: 80%;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-}
+    .newsletter input[type="email"] {
+      padding: 0.5rem;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
 
-.newsletter button {
-  padding: 0.5rem 1rem;
-  background-color: var(--gold);
-  border: none;
-  color: var(--dark-blue);
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background-color: var(--gold);
+      border: none;
+      color: var(--dark-blue);
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-/* Copyright styling */
-footer .footer-copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 2rem;
-  padding-top: 1rem;
-  font-size: 0.9rem;
-  color: #ccc;
-}
+    footer .footer-copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
 
-@media (max-width: 768px) {
-  .contact-container,
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .contact-container,
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
 
-  .contact-info {
-    margin-top: 0.5rem;
-  }
-}
-    
+      .contact-info {
+        margin-top: 0.5rem;
+      }
+
+      body {
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .team-name {
+        font-size: 1.05rem;
+      }
+
+      .team-role {
+        font-size: 0.9rem;
+      }
+
+      .team-bio {
+        font-size: 0.85rem;
+      }
+
+      .footer-section h4 {
+        font-size: 1rem;
+      }
+
+      .footer-links a,
+      .newsletter input,
+      .newsletter button,
+      footer p {
+        font-size: 0.9rem;
+      }
+
+      .social-icons a {
+        font-size: 1.3rem;
+      }
+
+      footer .footer-copyright {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -218,18 +260,16 @@ footer .footer-copyright {
   </header>
 
   <nav>
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/ventures/">Ventures</a>
-  <a href="/contact/">Contact</a>
-</nav>
-
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/ventures/">Ventures</a>
+    <a href="/contact/">Contact</a>
+  </nav>
 
   <main>
     <h2>Meet Our Team</h2>
 
     <div class="team-grid">
-
       <div class="team-card">
         <img src="/brendah.jpg" alt="CEO Photo" class="team-photo" />
         <div class="team-name">Mukisa Brendah Rebecca</div>
@@ -257,49 +297,47 @@ footer .footer-copyright {
         <div class="team-role">Legal Advicer</div>
         <p class="team-bio">Handles the legal activities of Bree Holdings, ensuring proper legal actions and operations.</p>
       </div>
-
     </div>
   </main>
 
   <footer>
-  <div class="footer-container">
-    <div class="footer-section footer-links">
-      <h4>Quick Links</h4>
-      <a href="/team/">Team</a>
-      <a href="/News/">News</a>
-      <a href="/Testimonies/">Testimonies</a>
-    </div>
+    <div class="footer-container">
+      <div class="footer-section footer-links">
+        <h4>Quick Links</h4>
+        <a href="/team/">Team</a>
+        <a href="/News/">News</a>
+        <a href="/Testimonies/">Testimonies</a>
+      </div>
 
-    <div class="footer-section">
-      <h4>Contact Us</h4>
-      <p>Email: info@breeholdings.com</p>
-      <p>Phone: +256 790 276170</p>
-    </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: info@breeholdings.com</p>
+        <p>Phone: +256 790 276170</p>
+      </div>
 
-     <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
           <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section newsletter">
+        <h4>Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Your email address" required />
+          <br />
+          <button type="submit">Subscribe</button>
+        </form>
       </div>
     </div>
 
-     <div class="footer-section newsletter">
-      <h4>Newsletter</h4>
-      <form>
-        <input type="email" placeholder="Your email address" required />
-        <br />
-        <button type="submit">Subscribe</button>
-      </form>
+    <div class="footer-copyright">
+      &copy; 2025 Bree Holdings. All rights reserved.
     </div>
-  </div>
-
-  <!-- Separated copyright section -->
-  <div class="footer-copyright">
-    &copy; 2025 Bree Holdings. All rights reserved.
-  </div>
   </footer>
 
 </body>
