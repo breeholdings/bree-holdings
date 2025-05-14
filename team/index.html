@@ -28,25 +28,27 @@
     header {
       background-color: var(--white);
       padding: 1rem 2rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .header-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
-      gap: 1rem;
     }
 
     header img {
       max-height: 70px;
     }
 
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
     .contact-info {
+      text-align: right;
       font-size: 0.95rem;
       font-weight: 500;
-      text-align: right;
     }
 
     .cta {
@@ -77,6 +79,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -156,6 +159,7 @@
       color: var(--white);
       padding: 2rem 1rem 1rem 1rem;
       text-align: center;
+      overflow-x: hidden;
     }
 
     .footer-container {
@@ -220,18 +224,35 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .header-content {
+      header {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .contact-info,
+      .cta {
+        text-align: left;
+        width: 100%;
+      }
+
+      .partner-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
         text-align: center;
       }
 
-      .contact-info {
-        margin: 0.5rem 0;
-      }
-
-      body {
-        font-size: 14px;
+      nav {
+        gap: 1rem;
+        flex-direction: column;
       }
 
       nav a {
@@ -273,20 +294,13 @@
         font-size: 0.8rem;
       }
     }
-
-    @media (max-width: 480px) {
-      .partner-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="header-content">
-      <img src="/logo.PNG" alt="Bree Holdings Logo" />
+    <img src="/logo.PNG" alt="Bree Holdings Logo" />
+    <div class="header-right">
       <div class="contact-info">
         Email: info@breeholdings.com<br />
         Contact: +256 790 276170
@@ -356,20 +370,10 @@
       <div class="footer-section">
         <h4>Follow Us</h4>
         <div class="social-icons">
-          <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
-      </div>
-
-      <div class="footer-section newsletter">
-        <h4>Newsletter</h4>
-        <form>
-          <input type="email" placeholder="Your email address" required />
-          <br />
-          <button type="submit">Subscribe</button>
-        </form>
       </div>
     </div>
 
