@@ -44,6 +44,28 @@
       font-weight: 500;
     }
 
+    .cta {
+      text-align: center;
+    }
+
+    .partner-btn {
+      background-color: var(--dark-blue);
+      color: var(--gold);
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .partner-btn:hover {
+      background-color: var(--gold);
+      color: var(--dark-blue);
+      transform: scale(1.1);
+    }
+
     nav {
       background-color: var(--gold);
       display: flex;
@@ -256,6 +278,9 @@
     <div class="contact-info">
       Email: info@breeholdings.com<br />
       Contact: +256 790 276170
+    </div>
+    <div class="cta">
+      <button class="partner-btn" onclick="window.location.href='partner.html'">Become A Partner</button>
     </div>
   </header>
 
