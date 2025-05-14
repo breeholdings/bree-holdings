@@ -31,6 +31,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
     }
 
     header img {
@@ -41,6 +42,11 @@
       text-align: right;
       font-size: 0.95rem;
       font-weight: 500;
+    }
+
+    #google_translate_element {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
     }
 
     nav {
@@ -197,6 +203,10 @@
         margin-top: 0.5rem;
       }
 
+      #google_translate_element {
+        margin-top: 0.5rem;
+      }
+
       .hero-text {
         font-size: 1.2rem;
         left: 10px;
@@ -221,6 +231,7 @@
     <div class="contact-info">
       Email: info@breeholdings.com<br />
       Contact: +256 790 276170
+      <div id="google_translate_element"></div>
     </div>
   </header>
 
@@ -277,9 +288,9 @@
       <h4>Follow Us</h4>
       <div class="social-icons">
         <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
 
@@ -292,6 +303,17 @@
       </form>
     </div>
   </footer>
+
+  <!-- Google Translate Widget Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
