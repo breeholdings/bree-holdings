@@ -44,9 +44,31 @@
       font-weight: 500;
     }
 
-    #google_translate_element {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
+    .cta {
+      text-align: center;
+    }
+
+    .partner-btn {
+      background-color: var(--dark-blue); /* Dark Blue */
+      color: var(--gold); /* Gold */
+      font-size: 16px;
+      font-weight: bold; /* Make the text bold */
+      padding: 12px 24px; /* Increased padding for a more prominent button */
+      border: none;
+      border-radius: 8px; /* Rounded corners for a sleek look */
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .partner-btn:hover {
+      background-color: var(--gold); /* Gold */
+      color: var(--dark-blue); /* Dark Blue */
+      transform: scale(1.1); /* Slightly enlarge on hover */
+    }
+
+    .partner-btn:focus {
+      outline: none;
+      box-shadow: 0 0 5px var(--gold); /* Add a glow effect when focused */
     }
 
     nav {
@@ -229,9 +251,10 @@
   <header>
     <img src="logo.PNG" alt="Bree Holdings Logo" />
     <div class="contact-info">
-      Email: info@breeholdings.com<br />
-      Contact: +256 790 276170
-      <div id="google_translate_element"></div>
+      Email: info@breeholdings.com | Contact: +256 790 276170
+    </div>
+    <div class="cta">
+      <button class="partner-btn" onclick="window.location.href='partner.html'">Become A Partner</button>
     </div>
   </header>
 
@@ -303,17 +326,5 @@
       </form>
     </div>
   </footer>
-
-  <!-- Google Translate Widget Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
