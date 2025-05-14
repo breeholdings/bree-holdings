@@ -49,26 +49,21 @@
     }
 
     .partner-btn {
-      background-color: var(--dark-blue); /* Dark Blue */
-      color: var(--gold); /* Gold */
+      background-color: var(--dark-blue);
+      color: var(--gold);
       font-size: 16px;
-      font-weight: bold; /* Make the text bold */
-      padding: 12px 24px; /* Increased padding for a more prominent button */
+      font-weight: bold;
+      padding: 12px 24px;
       border: none;
-      border-radius: 8px; /* Rounded corners for a sleek look */
+      border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     }
 
     .partner-btn:hover {
-      background-color: var(--gold); /* Gold */
-      color: var(--dark-blue); /* Dark Blue */
-      transform: scale(1.1); /* Slightly enlarge on hover */
-    }
-
-    .partner-btn:focus {
-      outline: none;
-      box-shadow: 0 0 5px var(--gold); /* Add a glow effect when focused */
+      background-color: var(--gold);
+      color: var(--dark-blue);
+      transform: scale(1.1);
     }
 
     nav {
@@ -161,15 +156,19 @@
       background-color: var(--dark-blue);
       color: var(--white);
       padding: 2rem 1rem 1rem 1rem;
-      text-align: center;
     }
 
     .footer-container {
       max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
       gap: 2rem;
+    }
+
+    .footer-section {
+      flex: 1 1 250px;
     }
 
     .footer-section h4 {
@@ -216,77 +215,20 @@
       cursor: pointer;
     }
 
-    footer .footer-copyright {
+    .footer-copyright {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
       margin-top: 2rem;
       padding-top: 1rem;
       font-size: 0.9rem;
       color: #ccc;
-      display: grid;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
-      .header-content {
+      .footer-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
-
-      .contact-info {
-        margin: 0.5rem 0;
-      }
-
-      body {
-        font-size: 14px;
-      }
-
-      nav a {
-        font-size: 1rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-
-      .footer-section h4 {
-        font-size: 1rem;
-      }
-
-      .footer-links a,
-      .newsletter input,
-      .newsletter button,
-      footer p {
-        font-size: 0.9rem;
-      }
-
-      .social-icons a {
-        font-size: 1.3rem;
-      }
-
-      footer .footer-copyright {
-        font-size: 0.8rem;
-      }
-
-      .hero-text {
-        font-size: 1.2rem;
-        left: 10px;
-        bottom: 10px;
-        padding: 0.8rem 1.2rem;
-      }
-
-      .hero {
-        max-height: 250px;
-      }
-
-      .venture-buttons {
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .partner-btn {
-        padding: 10px 20px;
-        font-size: 14px;
       }
     }
   </style>
@@ -300,8 +242,8 @@
       Contact: +256 790 276170
     </div>
     <div class="cta">
-  <button class="partner-btn" onclick="window.location.href='/partners/index.html'">Become A Partner</button>
-</div>
+      <button class="partner-btn" onclick="window.location.href='/partners/index.html'">Become A Partner</button>
+    </div>
   </header>
 
   <nav>
@@ -330,54 +272,49 @@
     <section>
       <h2>Explore Our Ventures</h2>
       <div class="venture-buttons">
-        <a href="https://cluckandcrave.com" target="_blank" rel="noopener noreferrer">Cluck & Crave</a>
-        <a href="https://signatureluxe.com" target="_blank" rel="noopener noreferrer">Signature Luxe</a>
-        <a href="https://thecarwash.ug" target="_blank" rel="noopener noreferrer">The Car Wash</a>
-        <a href="https://breeforduniversity.com" target="_blank" rel="noopener noreferrer">Breeford University</a>
-        <a href="https://breefordacademy.com" target="_blank" rel="noopener noreferrer">Breeford Academy</a>
+        <a href="https://cluckandcrave.com" target="_blank">Cluck & Crave</a>
+        <a href="https://signatureluxe.com" target="_blank">Signature Luxe</a>
+        <a href="https://thecarwash.ug" target="_blank">The Car Wash</a>
+        <a href="https://breeforduniversity.com" target="_blank">Breeford University</a>
+        <a href="https://breefordacademy.com" target="_blank">Breeford Academy</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer-section footer-links">
-      <h4>Quick Links</h4>
-      <a href="/team/">Team</a>
-      <a href="/News/">News</a>
-      <a href="/Testimonies/">Testimonies</a>
-    </div>
+    <div class="footer-container">
+      <div class="footer-section footer-links">
+        <h4>Quick Links</h4>
+        <a href="/team/">Team</a>
+        <a href="/News/">News</a>
+        <a href="/Testimonies/">Testimonies</a>
+      </div>
 
-    <div class="footer-section">
-      <h4>Contact Us</h4>
-      <p>Email: info@breeholdings.com</p>
-      <p>Phone: +256 790 276170</p>
-    </div>
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Email: info@breeholdings.com<br>Phone: +256 790 276170</p>
+      </div>
 
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section newsletter">
+        <h4>Newsletter</h4>
+        <input type="email" placeholder="Your email" />
+        <button>Subscribe</button>
       </div>
     </div>
 
-    <div class="footer-section newsletter">
-      <h4>Newsletter</h4>
-      <form>
-        <input type="email" placeholder="Your email address" required />
-        <br />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Separated copyright section -->
     <div class="footer-copyright">
       &copy; 2025 Bree Holdings. All rights reserved.
     </div>
-    </footer>  
   </footer>
+
 </body>
 </html>
