@@ -75,7 +75,6 @@
       width: 25px;
       background-color: var(--primary-color);
       margin: 4px 0;
-      transition: 0.4s;
     }
 
     .mobile-nav {
@@ -110,29 +109,82 @@
     }
 
     .hero {
-      background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    .hero h1 {
-      font-size: 3rem;
+    .hero-slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .hero-slide h1 {
+      font-size: 2.2rem;
       margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+    .hero-slide p {
+      font-size: 1rem;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .hero-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .hero-controls button {
+      background: rgba(0,0,0,0.4);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-slide h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero-slide p {
+        font-size: 0.9rem;
+      }
     }
 
     section {
       padding: 60px 40px;
-    }
-
-    .about, .ventures, .news {
-      display: grid;
-      gap: 40px;
     }
 
     .about-content {
@@ -181,12 +233,17 @@
       text-decoration: none;
       margin: 0 10px;
     }
+
+    .footer .footer-bottom {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Bree Holdings</div>
-
     <nav>
       <a href="#">Home</a>
       <a href="#about">About</a>
@@ -195,13 +252,11 @@
       <a href="#contact">Contact</a>
       <a href="#" class="cta-button">Partner with Us</a>
     </nav>
-
     <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
       <span></span>
       <span></span>
       <span></span>
     </div>
-
     <div class="mobile-nav">
       <a href="#">Home</a>
       <a href="#about">About</a>
@@ -213,19 +268,40 @@
   </header>
 
   <section class="hero">
-    <h1>Innovating the Future. Empowering Africa.</h1>
-    <p>A bold tech and investment firm redefining the digital landscape.</p>
-    <a href="#ventures" class="cta-button">Explore Ventures</a>
+    <div class="hero-slide active" style="background-image: url('/student.webp');">
+      <h1>Breeford University</h1>
+      <p>Empowering future leaders through exceptional education and academic innovation.</p>
+    </div>
+    <div class="hero-slide" style="background-image: url('/tech.jpg');">
+      <h1>Bree Tech</h1>
+      <p>Building Africa’s future with transformative technology and smart solutions.</p>
+    </div>
+    <div class="hero-slide" style="background-image: url('/cluck.jpg');">
+      <h1>Cluck & Crave</h1>
+      <p>Serving crave-worthy flavors with a bold and unique fast food experience.</p>
+    </div>
+    <div class="hero-slide" style="background-image: url('/luxe.jpg');">
+      <h1>Signature Luxe</h1>
+      <p>Where elegance meets fashion—defining modern luxury for Africa’s trendsetters.</p>
+    </div>
+    <div class="hero-slide" style="background-image: url('/community.jpg');">
+      <h1>Impacting the Community</h1>
+      <p>Investing in ventures that uplift, empower, and transform African communities.</p>
+    </div>
+    <div class="hero-controls">
+      <button onclick="changeSlide(-1)">&lt; Prev</button>
+      <button onclick="changeSlide(1)">Next &gt;</button>
+    </div>
   </section>
 
   <section id="about">
     <h2>About Bree Holdings</h2>
     <div class="about-content">
       <div class="about-text">
-        <p>Bree Holdings is a forward-thinking tech and investment company committed to innovation and sustainable growth across Africa. We partner with visionary entrepreneurs and drive impactful digital transformation.</p>
+        <p>Bree Holdings is a diversified holding company dedicated to nurturing ambitious brands across various industries. Our mission is to shape the future of Africa through strategic investment, innovation, and excellence in execution.</p>
       </div>
       <div class="about-image">
-        <img src="https://via.placeholder.com/500x300" alt="About Bree Holdings">
+        <img src="images/about.webp" alt="About Bree Holdings">
       </div>
     </div>
   </section>
@@ -234,20 +310,20 @@
     <h2>Our Ventures</h2>
     <div class="venture-grid">
       <div class="venture-card">
-        <h3>Tech Innovation</h3>
-        <p>We develop scalable digital products and platforms that solve real-world problems.</p>
+        <h3>Breeford University</h3>
+        <p>A premier academic institution focused on world-class education, leadership, and research excellence.</p>
       </div>
       <div class="venture-card">
-        <h3>Startup Investments</h3>
-        <p>Empowering African startups with capital, mentorship, and strategic partnerships.</p>
+        <h3>Bree Tech</h3>
+        <p>Driving digital transformation through innovative tech solutions for African businesses and consumers.</p>
       </div>
       <div class="venture-card">
-        <h3>Digital Infrastructure</h3>
-        <p>Building the digital backbone of tomorrow’s economy—from fintech to e-commerce.</p>
+        <h3>Cluck & Crave</h3>
+        <p>A bold and flavorful fast food brand redefining the chicken and cravings experience across the continent.</p>
       </div>
       <div class="venture-card">
-        <h3>Training & Empowerment</h3>
-        <p>Equipping youth and professionals with skills for a tech-driven future.</p>
+        <h3>Signature Luxe</h3>
+        <p>A modern luxury fashion brand delivering elegance, style, and empowerment through premium apparel.</p>
       </div>
     </div>
   </section>
@@ -256,19 +332,19 @@
     <h2>Insights & News</h2>
     <div class="news-grid">
       <div class="news-card">
-        <h4>Q1 Investment Report</h4>
-        <p>Highlights of our latest investments and strategic moves in the African tech ecosystem.</p>
+        <h4>New Campus Launch</h4>
+        <p>Breeford University expands with a new state-of-the-art campus in 2025.</p>
       </div>
       <div class="news-card">
-        <h4>Partnering with Startups</h4>
-        <p>Learn how Bree Holdings is shaping the future through innovation and strategic collaboration.</p>
+        <h4>Cluck & Crave Goes National</h4>
+        <p>Our food venture scales to over 15 cities, redefining fast food across Uganda.</p>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Get in Touch</h2>
-    <p>Ready to build the future with us? Reach out today.</p>
+    <p>Interested in collaboration or learning more? We'd love to hear from you.</p>
     <a href="#" class="cta-button">Contact Us</a>
   </section>
 
@@ -278,6 +354,35 @@
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
     </div>
+    <div class="footer-bottom">
+      Built and maintained by the Bree Holdings Web Team.
+    </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+      }
+
+      function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      document.querySelector('.hero-controls button:first-child').addEventListener('click', () => changeSlide(-1));
+      document.querySelector('.hero-controls button:last-child').addEventListener('click', () => changeSlide(1));
+
+      setInterval(() => {
+        changeSlide(1);
+      }, 10000);
+    });
+  </script>
 </body>
 </html>
