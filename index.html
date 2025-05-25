@@ -4,11 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bree Holdings</title>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
   integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
@@ -18,7 +13,7 @@
       --primary-color: #0a1f44;
       --accent-color: #f2b705;
       --text-color: #333;
-      --background-color: #fff;
+      --background-color: white;
     }
 
     * {
@@ -36,7 +31,7 @@
 
     header {
       background-color: var(--background-color);
-      padding: 20px 40px;
+      padding: 10px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,6 +46,11 @@
       font-size: 1.2rem;
     }
 
+    .header-logo img {
+      height: 60px; /* adjust as needed */
+      width: auto;
+    }
+
     nav {
       display: flex;
       align-items: center;
@@ -61,15 +61,13 @@
       text-decoration: none;
       color: var(--primary-color);
       font-weight: 600;
+      font-size: 1rem;
     }
 
-    .cta-button {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
+    .header-button {
+      padding: 10px 10px !important; /* !important to override other styles */
+      font-size: 0.9rem !important;
+      border-radius: 3px !important;
     }
 
     .menu-toggle {
@@ -267,7 +265,6 @@
   background-color: #0056b3;
 }
 
-
     .footer {
       background-color: var(--primary-color);
       color: white;
@@ -340,14 +337,17 @@
 </head>
 <body>
   <header>
-    <div class="logo">Bree Holdings</div>
+    <a href="#" class="header-logo">
+     <img src="logo.PNG" alt="Bree Holdings Logo">
+    </a>
     <nav>
       <a href="/">Home</a>
       <a href="/about/">About</a>
       <a href="/ventures/">Ventures</a>
       <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
       <a href="/contact/">Contact</a>
-      <a href="/partner/" class="cta-button">Collaborate with Us</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
     </nav>
     <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
       <span></span>
@@ -359,8 +359,9 @@
       <a href="/about/">About</a>
       <a href="/ventures/">Ventures</a>
       <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
       <a href="/contact/">Contact</a>
-      <a href="/partner/" class="cta-button">Join Us</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
     </div>
   </header>
 
@@ -445,27 +446,27 @@
   <section id="contact">
     <h2>Get in Touch</h2>
     <p>Interested in collaboration or learning more? We'd love to hear from you.</p>
-    <a href="/contact/" class="cta-button">Contact Us</a>
+    <a href="#" class="cta-button">Contact Us</a>
   </section>
 
  <footer class="footer">
   <div class="footer-col logo">
-    <img src="/ones.png" alt="Bree Holdings Logo">
+    <img src="ones.png" alt="Bree Holdings Logo">
     <small>Strategic ventures. Sustainable impact.</small>
   </div>
   <div class="footer-col">
     <h4>Quick Links</h4>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/ventures/">Ventures</a>
-    <a href="/news/">Insights</a>
-    <a href="/contact/">Contact</a>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#news">Insights</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="footer-col">
     <h4>Contact Us</h4>
     <p><i class="fas fa-envelope"></i> info@breeholdings.com</a></p>
     <p><i class="fas fa-phone"></i> +256 700 000 000</a></p>
-    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex, Ntinda-Kisasi rd, Kampala</p>
+    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex</p>
   </div>
   <div class="footer-col">
     <h4>Follow Us</h4>
@@ -476,10 +477,11 @@
       <a href="https://wa.me/256790276170" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
-   <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
   <div class="footer-bottom">
     &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
   </div>
+</div>
 </footer>
 
   <script>
@@ -506,6 +508,19 @@
         changeSlide(1);
       }, 10000);
     });
-  </script>
+  
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+
+  function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Optional: auto-slide every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+</script>
+
 </body>
 </html>
