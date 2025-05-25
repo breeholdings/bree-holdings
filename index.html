@@ -327,18 +327,27 @@
       font-size: 0.9rem;
       color: #ccc;
     }
+
+    .footer-bottom {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
   </style>
 </head>
 <body>
   <header>
     <div class="logo">Bree Holdings</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#ventures">Ventures</a>
-      <a href="#news">Insights</a>
-      <a href="#contact">Contact</a>
-      <a href="#" class="cta-button">Partner with Us</a>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/contact/">Contact</a>
+      <a href="/partner/" class="cta-button">Collaborate with Us</a>
     </nav>
     <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
       <span></span>
@@ -454,10 +463,9 @@
   </div>
   <div class="footer-col">
     <h4>Contact Us</h4>
-    <p>Email: info@breeholdings.com</p>
-    <p>Phone: +256 790 276170</p>
-    <p>Address: Three Sister's Complex</p>
-    <p>Ntinda-Kisasi rd, Kampala</p>
+    <p><i class="fas fa-envelope"></i> info@breeholdings.com</a></p>
+    <p><i class="fas fa-phone"></i> +256 700 000 000</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex, Ntinda-Kisasi rd, Kampala</p>
   </div>
   <div class="footer-col">
     <h4>Follow Us</h4>
@@ -468,6 +476,7 @@
       <a href="https://wa.me/256790276170" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </div>
+   <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
   <div class="footer-bottom">
     &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
   </div>
