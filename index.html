@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bree Holdings</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-KN+QPoBdRCKTA3/kYfQLh8R+q88LPKQ0TxqLsVYxxOYOuX0UZYucJqejgR3NYKyjXEXH9XxuU3FXM+PvZUXa5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
       --primary-color: #0a1f44;
@@ -173,25 +174,16 @@
       border-radius: 4px;
     }
 
-    @media (max-width: 768px) {
-      .hero-slide h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero-slide p {
-        font-size: 0.9rem;
-      }
-    }
-
     section {
       padding: 60px 40px;
     }
 
     .about-content {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 40px;
       align-items: center;
+      justify-content: space-between;
     }
 
     .about-text, .about-image {
@@ -202,6 +194,22 @@
       width: 100%;
       max-width: 500px;
       border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-text, .about-image {
+        flex: 1 1 100%;
+      }
+
+      .about-image {
+        order: 2;
+      }
     }
 
     .venture-grid, .news-grid {
@@ -224,18 +232,59 @@
     .footer {
       background-color: var(--primary-color);
       color: white;
-      padding: 40px;
-      text-align: center;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer .footer-col {
+      flex: 1 1 250px;
+    }
+
+    .footer .logo img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .footer .logo small {
+      display: block;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .footer h4 {
+      margin-bottom: 15px;
+      color: var(--accent-color);
     }
 
     .footer a {
-      color: var(--accent-color);
+      color: #eee;
       text-decoration: none;
-      margin: 0 10px;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    .footer .footer-bottom {
-      margin-top: 20px;
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
       font-size: 0.9rem;
       color: #ccc;
     }
@@ -299,9 +348,12 @@
     <div class="about-content">
       <div class="about-text">
         <p>Bree Holdings is a diversified holding company dedicated to nurturing ambitious brands across various industries. Our mission is to shape the future of Africa through strategic investment, innovation, and excellence in execution.</p>
+        <p style="margin-top: 15px;">
+          <a href="about.html" style="color: var(--primary-color); font-weight: 600; text-decoration: underline;">Learn more about Bree Holdings &rarr;</a>
+        </p>
       </div>
       <div class="about-image">
-        <img src="images/about.webp" alt="About Bree Holdings">
+        <img src="logo.PNG" alt="About Bree Holdings">
       </div>
     </div>
   </section>
@@ -348,16 +400,37 @@
     <a href="#" class="cta-button">Contact Us</a>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Bree Holdings. All rights reserved.</p>
-    <div>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
+ <footer class="footer">
+  <div class="footer-col logo">
+    <img src="logo.PNG" alt="Bree Holdings Logo">
+    <small>Strategic ventures. Sustainable impact.</small>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#news">Insights</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <p>Email: info@breeholdings.com</p>
+    <p>Phone: +256 700 000 000</p>
+    <p>Address: Kampala, Uganda</p>
+  </div>
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://facebook.com/breeholdings" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/breeholding_official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/breeholdings" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
     </div>
-    <div class="footer-bottom">
-      Built and maintained by the Bree Holdings Web Team.
-    </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
+  </div>
+</footer>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
