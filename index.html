@@ -4,318 +4,280 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bree Holdings</title>
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --dark-blue: #032449;
-      --gold: #f0c103;
-      --white: #ffffff;
+      --primary-color: #0a1f44;
+      --accent-color: #f2b705;
+      --text-color: #333;
+      --background-color: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: var(--dark-blue);
-      background-color: var(--white);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--white);
-      padding: 1rem 2rem;
+      background-color: var(--background-color);
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 10;
     }
 
-    header img {
-      max-height: 70px;
-    }
-
-    .contact-info {
-      text-align: right;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .cta {
-      text-align: center;
-    }
-
-    .partner-btn {
-      background-color: var(--dark-blue);
-      color: var(--gold);
-      font-size: 16px;
+    .logo {
       font-weight: bold;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
-
-    .partner-btn:hover {
-      background-color: var(--gold);
-      color: var(--dark-blue);
-      transform: scale(1.1);
+      font-size: 1.2rem;
     }
 
     nav {
-      background-color: var(--gold);
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
+      align-items: center;
     }
 
     nav a {
-      color: var(--dark-blue);
+      margin-left: 20px;
       text-decoration: none;
+      color: var(--primary-color);
       font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
     }
 
-    nav a:hover {
-      color: var(--white);
-    }
-
-    .hero-container {
-      position: relative;
-      width: 100%;
-    }
-
-    .hero {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-text {
-      position: absolute;
-      bottom: 30px;
-      left: 30px;
-      background-color: rgba(3, 36, 73, 0.7);
-      color: var(--white);
-      padding: 1rem 2rem;
-      font-size: 1.8rem;
-      border-radius: 10px;
-    }
-
-    main {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-    }
-
-    section h2 {
-      color: var(--dark-blue);
-      margin-bottom: 1rem;
-    }
-
-    section p {
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-
-    .venture-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .venture-buttons a {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    .venture-buttons a:hover {
-      background-color: var(--gold);
-      color: var(--dark-blue);
-    }
-
-    footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      padding: 2rem 1rem 1rem 1rem;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .footer-section {
-      flex: 1 1 250px;
-    }
-
-    .footer-section h4 {
-      margin-bottom: 1rem;
-    }
-
-    .footer-links a {
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin: 0.3rem 0;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    .social-icons a {
-      color: var(--white);
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: var(--gold);
-    }
-
-    .newsletter input[type="email"] {
-      padding: 0.5rem;
-      width: 80%;
-      border: none;
+    .cta-button {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      padding: 10px 20px;
       border-radius: 5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .newsletter button {
-      padding: 0.5rem 1rem;
-      background-color: var(--gold);
-      border: none;
-      color: var(--dark-blue);
+      text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
       cursor: pointer;
     }
 
-    .footer-copyright {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      margin-top: 2rem;
-      padding-top: 1rem;
-      font-size: 0.9rem;
-      color: #ccc;
-      text-align: center;
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: var(--primary-color);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .mobile-nav a {
+      margin: 10px 0;
+      color: var(--primary-color);
     }
 
     @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+      nav {
+        display: none;
       }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x500') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    section {
+      padding: 60px 40px;
+    }
+
+    .about, .ventures, .news {
+      display: grid;
+      gap: 40px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text, .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .venture-grid, .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .venture-card, .news-card {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .venture-card:hover, .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin: 0 10px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.PNG" alt="Bree Holdings Logo" />
-    <div class="contact-info">
-      Email: info@breeholdings.com<br />
-      Contact: +256 790 276170
+    <div class="logo">Bree Holdings</div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#news">Insights</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="cta-button">Partner with Us</a>
+    </nav>
+
+    <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <div class="cta">
-      <button class="partner-btn" onclick="window.location.href='/partners/index.html'">Become A Partner</button>
+
+    <div class="mobile-nav">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#news">Insights</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="cta-button">Partner with Us</a>
     </div>
   </header>
 
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/ventures/">Ventures</a>
-    <a href="/contact/">Contact</a>
-  </nav>
+  <section class="hero">
+    <h1>Innovating the Future. Empowering Africa.</h1>
+    <p>A bold tech and investment firm redefining the digital landscape.</p>
+    <a href="#ventures" class="cta-button">Explore Ventures</a>
+  </section>
 
-  <div class="hero-container">
-    <img class="hero" src="hero.jpg" alt="Bree Holdings Hero Banner" />
-    <div class="hero-text">Innovating Across Industries</div>
-  </div>
-
-  <main>
-    <section>
-      <h2>Mission Statement</h2>
-      <p>To lead transformative ventures across sectors with excellence, creativity, and a commitment to enriching lives through education, design, fashion, food, and innovation.</p>
-    </section>
-
-    <section>
-      <h2>About Bree Holdings</h2>
-      <p>Bree Holdings is a dynamic and forward-thinking company founded by Mukisa Brendah Rebecca. Our ventures span education, fashion, food, automotive care, printing, and interior design. We are committed to creating impactful brands that touch lives and inspire progress.</p>
-    </section>
-
-    <section>
-      <h2>Explore Our Ventures</h2>
-      <div class="venture-buttons">
-        <a href="https://cluckandcrave.com" target="_blank">Cluck & Crave</a>
-        <a href="https://signatureluxe.com" target="_blank">Signature Luxe</a>
-        <a href="https://thecarwash.ug" target="_blank">The Car Wash</a>
-        <a href="https://breeforduniversity.com" target="_blank">Breeford University</a>
-        <a href="https://breefordacademy.com" target="_blank">Breeford Academy</a>
+  <section id="about">
+    <h2>About Bree Holdings</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Bree Holdings is a forward-thinking tech and investment company committed to innovation and sustainable growth across Africa. We partner with visionary entrepreneurs and drive impactful digital transformation.</p>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section footer-links">
-        <h4>Quick Links</h4>
-        <a href="/team/">Team</a>
-        <a href="/News/">News</a>
-        <a href="/Testimonies/">Testimonies</a>
-      </div>
-
-      <div class="footer-section">
-        <h4>Contact Us</h4>
-        <p>Email: info@breeholdings.com<br>Phone: +256 790 276170</p>
-      </div>
-
-      <div class="footer-section">
-        <h4>Follow Us</h4>
-        <div class="social-icons">
-          <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </div>
-
-      <div class="footer-section newsletter">
-        <h4>Newsletter</h4>
-        <input type="email" placeholder="Your email" />
-        <button>Subscribe</button>
+      <div class="about-image">
+        <img src="https://via.placeholder.com/500x300" alt="About Bree Holdings">
       </div>
     </div>
+  </section>
 
-    <div class="footer-copyright">
-      &copy; 2025 Bree Holdings. All rights reserved.
+  <section id="ventures">
+    <h2>Our Ventures</h2>
+    <div class="venture-grid">
+      <div class="venture-card">
+        <h3>Tech Innovation</h3>
+        <p>We develop scalable digital products and platforms that solve real-world problems.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Startup Investments</h3>
+        <p>Empowering African startups with capital, mentorship, and strategic partnerships.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Digital Infrastructure</h3>
+        <p>Building the digital backbone of tomorrow’s economy—from fintech to e-commerce.</p>
+      </div>
+      <div class="venture-card">
+        <h3>Training & Empowerment</h3>
+        <p>Equipping youth and professionals with skills for a tech-driven future.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="news">
+    <h2>Insights & News</h2>
+    <div class="news-grid">
+      <div class="news-card">
+        <h4>Q1 Investment Report</h4>
+        <p>Highlights of our latest investments and strategic moves in the African tech ecosystem.</p>
+      </div>
+      <div class="news-card">
+        <h4>Partnering with Startups</h4>
+        <p>Learn how Bree Holdings is shaping the future through innovation and strategic collaboration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Ready to build the future with us? Reach out today.</p>
+    <a href="#" class="cta-button">Contact Us</a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bree Holdings. All rights reserved.</p>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
     </div>
   </footer>
-
 </body>
 </html>
