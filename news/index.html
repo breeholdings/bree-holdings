@@ -1,1 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News & Insights</title>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --primary-color: #0a1f44;
+      --accent-color: #f2b705;
+      --text-color: #333; 
+      --background-color: white;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--background-color);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .header-logo img {
+      height: 60px; /* adjust as needed */
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .header-button {
+      padding: 10px 10px !important; /* !important to override other styles */
+      font-size: 0.9rem !important;
+      border-radius: 3px !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: var(--primary-color);
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .mobile-nav a {
+      margin: 10px 0;
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+    }
+
+    .cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1em;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+    .hero-section {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  background-image: url('https://i.pinimg.com/736x/f9/13/99/f91399a81fab2394b3a26710ba5f45ab.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      background: #004080;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    .page-header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.85;
+    }
+
+    .ventures-container {
+      max-width: 1100px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 25px;
+      padding: 0 20px;
+    }
+    .venture-box {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease;
+    }
+    .venture-box:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .venture-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .venture-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .venture-title {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #004080;
+    }
+    .venture-desc {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      flex-grow: 1;
+      color: #333;
+    }
+    .venture-location {
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .venture-opening {
+      font-style: italic;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    .contact-info {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #004080;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 480px) {
+      .venture-image {
+        height: 140px;
+      }
+    }
+
+.footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer .footer-col {
+      flex: 1 1 250px;
+    }
+
+    .footer .logo img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .footer .logo small {
+      display: block;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .footer h4 {
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+
+    .footer a {
+      color: #eee;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .footer-bottom {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="header-logo">
+     <img src="/logo.PNG" alt="Bree Holdings Logo">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partners/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/join/" class="cta-button header-button">Collaborate</a>
+    </nav>
+    <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partners/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/join/" class="cta-button header-button">Collaborate</a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content">
+    </div>
+  </section>
+
+  <h2>News & Insights</h2>
+  <main class="ventures-container">
+    
+    <article class="venture-box">
+      <img 
+        src="https://i.pinimg.com/736x/e5/20/bc/e520bc8ea2f11984017e3622d15104d7.jpg" 
+        alt="Cluck & Crave" 
+        class="venture-image" 
+      />
+      <div class="venture-content">
+        <h2 class="venture-title">Cluck & Crave</h2>
+        <p class="venture-desc">Opening in July along Ntinda-Bukoto Road, Cluck & Crave is set to bring delicious meals and vibrant dining experiences to the community.</p>
+        <div class="venture-location">Location: Ntinda-Bukoto Rd</div>
+        <div class="venture-opening">Job openings coming soon.</div>
+      </div>
+    </article>
+
+    <article class="venture-box">
+      <img 
+        src="https://i.pinimg.com/736x/ca/b3/12/cab3125c29d0de53651ebe1ee4d90636.jpg" 
+        alt="Signature Luxe" 
+        class="venture-image" 
+      />
+      <div class="venture-content">
+        <h2 class="venture-title">Signature Luxe</h2>
+        <p class="venture-desc">Launching in October at New Pioneer Mall, Kampala Road, Signature Luxe offers high-end fashion and timeless style.</p>
+        <div class="venture-location">Location: New Pioneer Mall, Kampala Rd</div>
+        <div class="venture-opening">Job openings coming soon.</div>
+      </div>
+    </article>
+
+    <article class="venture-box">
+      <img 
+        src="https://i.pinimg.com/736x/92/e3/66/92e366c3206e840918fe32f8baa0ab54.jpg" 
+        alt="Bree Tech" 
+        class="venture-image" 
+      />
+      <div class="venture-content">
+        <h2 class="venture-title">Bree Tech</h2>
+        <p class="venture-desc">Providing Website Development, Hosting, Social Media Management, Content Creation, and more.</p>
+        <div class="venture-location">Contact: +256 753 589 219 (Call/WhatsApp)</div>
+      </div>
+    </article>
+
+    <article class="venture-box">
+      <img 
+        src="https://i.pinimg.com/736x/fa/81/c5/fa81c589c4a74dd20d774355d03b91e8.jpg" 
+        alt="The Car Wash" 
+        class="venture-image" 
+      />
+      <div class="venture-content">
+        <h2 class="venture-title">The Car Wash</h2>
+        <p class="venture-desc">Opening January 2026 in Bukoto along Bukoto-Kisasi Road, The Car Wash will offer premium vehicle cleaning services.</p>
+        <div class="venture-location">Location: Bukoto-Kisasi Rd</div>
+        <div class="venture-opening">Job openings coming soon.</div>
+      </div>
+    </article>
+
+  </main>
+
+ <footer class="footer">
+  <div class="footer-col logo">
+    <img src="/ones.png" alt="Bree Holdings Logo">
+    <small>Strategic ventures. Sustainable impact.</small>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/ventures/">Ventures</a>
+    <a href="/news/">Insights</a>
+    <a href="/partners/">Partner</a>
+    <a href="/contact/">Contact</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <p><i class="fas fa-envelope"></i> info@breeholdings.com</a></p>
+    <p><i class="fas fa-phone"></i> +256 700 000 000</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex</p>
+    <p>Ntinda-Kisasi Rd, K'la (U)</p>
+  </div>
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://facebook.com/DripPlugOfficialPage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/breeholdings_official?igsh=MWFiaWpyNzdnd3Zydw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/breeholdings" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/256790276170" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <div class="footer-bottom">
+    &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
+  </div>
+</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+      }
+
+      function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      document.querySelector('.hero-controls button:first-child').addEventListener('click', () => changeSlide(-1));
+      document.querySelector('.hero-controls button:last-child').addEventListener('click', () => changeSlide(1));
+
+      setInterval(() => {
+        changeSlide(1);
+      }, 10000);
+    });
+  
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+
+  function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Optional: auto-slide every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+</script>
+
+</body>
+</html>
