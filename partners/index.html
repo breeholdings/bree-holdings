@@ -3,308 +3,532 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Become A Partner - Bree Holdings</title>
+  <title>Partners</title>
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     :root {
-      --dark-blue: #032449;
-      --gold: #f0c103;
-      --white: #ffffff;
+      --primary-color: #0a1f44;
+      --accent-color: #f2b705;
+      --text-color: #333;
+      --background-color: white;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: var(--dark-blue);
-      background-color: var(--white);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--white);
-      padding: 1rem 2rem;
+      background-color: var(--background-color);
+      padding: 10px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 10;
     }
 
-    header img {
-      max-height: 70px;
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .header-logo img {
+      height: 60px; /* adjust as needed */
       width: auto;
     }
 
-    .contact-info {
-      text-align: right;
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin-left: 1rem;
-    }
-
-    .cta {
-      text-align: center;
-    }
-
-    .partner-btn {
-      background-color: var(--dark-blue);
-      color: var(--gold);
-      font-size: 16px;
-      font-weight: bold;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
-
-    .partner-btn:hover {
-      background-color: var(--gold);
-      color: var(--dark-blue);
-      transform: scale(1.1);
-    }
-
     nav {
-      background-color: var(--gold);
       display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-
-    nav a {
-      color: var(--dark-blue);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--white);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-
-    main h1 {
-      color: var(--dark-blue);
-      margin-bottom: 1.5rem;
-    }
-
-    .download-section {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
       align-items: center;
     }
 
-    .download-link {
-      display: inline-block;
-      background-color: var(--dark-blue);
-      color: var(--gold);
-      padding: 12px 20px;
-      border-radius: 6px;
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
     }
 
-    .download-link:hover {
-      background-color: var(--gold);
-      color: var(--dark-blue);
+    .header-button {
+      padding: 10px 10px !important; /* !important to override other styles */
+      font-size: 0.9rem !important;
+      border-radius: 3px !important;
     }
 
-    footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      padding: 2rem 1rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .footer-section h4 {
-      margin-bottom: 1rem;
-    }
-
-    .footer-links a {
-      color: var(--white);
-      text-decoration: none;
-      display: block;
-      margin: 0.3rem 0;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold);
-    }
-
-    .social-icons a {
-      color: var(--white);
-      margin: 0 0.5rem;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: var(--gold);
-    }
-
-    .newsletter input[type="email"] {
-      padding: 0.5rem;
-      width: 80%;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .newsletter button {
-      padding: 0.5rem 1rem;
-      background-color: var(--gold);
-      border: none;
-      color: var(--dark-blue);
-      font-weight: bold;
-      border-radius: 5px;
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
       cursor: pointer;
     }
 
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: var(--primary-color);
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .mobile-nav a {
+      margin: 10px 0;
+      color: var(--primary-color);
+    }
+
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .contact-info {
-        margin-top: 0.5rem;
-        text-align: center;
-      }
-
-      .cta {
-        margin-top: 1rem;
-      }
-
       nav {
-        flex-direction: row;
-        gap: 1rem;
-        padding: 1rem 0;
+        display: none;
       }
 
-      main {
-        padding: 1rem;
-        margin-top: 2rem;
+      .menu-toggle {
+        display: flex;
       }
 
-      .download-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      .mobile-nav.active {
+        display: flex;
       }
     }
 
-    @media (max-width: 480px) {
-      .partner-btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
+    .cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1em;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 
-      .download-link {
-        font-size: 14px;
-        padding: 10px 18px;
-      }
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+    .hero-section {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  background-image: url('https://i.pinimg.com/736x/74/05/b7/7405b70c0ff2eb86ce5fa4c88584bd94.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.partnerships {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+  .partnerships .section-title {
+    font-size: 32px;
+    color: #002855;
+    margin-bottom: 10px;
+  }
+
+  .partnerships .section-intro {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    color: #555;
+  }
+
+  .partnership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .partnership-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    text-align: left;
+  }
+
+  .partnership-card h3 {
+    margin-bottom: 10px;
+    color: #002855;
+    font-size: 20px;
+  }
+
+  .partnership-card p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.5;
+  }    
+
+  .partnership-card .icon {
+  margin-bottom: 15px;
+}
+.partnership-card svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.partnership-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-message {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #002855; /* Bree Holdings dark blue */
+}
+
+.btn {
+  background-color: #002855;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #014f9e; /* Slightly lighter blue on hover */
+}
+
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
     }
+
+    .footer .footer-col {
+      flex: 1 1 250px;
+    }
+
+    .footer .logo img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .footer .logo small {
+      display: block;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .footer h4 {
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+
+    .footer a {
+      color: #eee;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .footer-bottom {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
   </style>
 </head>
 <body>
-
   <header>
-    <img src="/logo.PNG" alt="Bree Holdings Logo" />
-    <div class="contact-info">
-      Email: info@breeholdings.com<br />
-      Contact: +256 790 276170
+    <a href="#" class="header-logo">
+     <img src="/logo.PNG" alt="Bree Holdings Logo">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
+    </nav>
+    <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <div class="cta">
-      <button class="partner-btn" onclick="window.location.href='partner.html'">Become A Partner</button>
+    <div class="mobile-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
     </div>
   </header>
 
-  <nav>
+  <section class="hero-section">
+    <div class="hero-content">
+    </div>
+  </section>
+
+  <section class="partnerships">
+  <div class="container">
+    <h2 class="section-title">Our Partnerships</h2>
+    <p class="section-intro">
+      At Bree Holdings, we believe in the power of collaboration. Our partnerships drive innovation, growth, and impact across sectors.
+    </p>
+
+    <div class="partnership-grid">
+      <!-- Strategic Business Partnerships -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Briefcase SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 0 1 1 1v4h-9v2h9v4a1 1 0 0 1-1 1h-3v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2H5a1 1 0 0 1-1-1v-4h9v-2H4V7a1 1 0 0 1 1-1h3V4a2 2 0 0 1 2-2zM9 6h6V4H9v2z"/></svg>
+        </div>
+        <h3>Strategic Business</h3>
+        <p>Collaborating with investors, SMEs, and holding companies to amplify market reach and innovation across our ventures.</p>
+      </div>
+
+      <!-- Academic & Talent -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Graduation Cap SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M12 2L1 7l11 5 9-4.09V17h2V7L12 2zm-1 13.59l-5.5-2.5v2.32L11 18l5.5-2.59v-2.32L11 15.59z"/></svg>
+        </div>
+        <h3>Academic & Talent</h3>
+        <p>Partnering with universities, tech educators, and NGOs to empower students and foster a skilled workforce.</p>
+      </div>
+
+      <!-- Technology & Integration -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Code SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M8.7 13.3L5.4 10l3.3-3.3-1.4-1.4L2.6 10l4.7 4.7 1.4-1.4zm6.6 0l3.3 3.3 1.4-1.4L21.4 10l-4.7-4.7-1.4 1.4L18.6 10l-3.3 3.3z"/></svg>
+        </div>
+        <h3>Technology & Integration</h3>
+        <p>Working with tech firms and platforms to enhance digital experiences across Bree Tech, Signature Luxe, and more.</p>
+      </div>
+
+      <!-- Supplier & Logistics -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Truck SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0v-5l-3-4zM5 15V6h10v9H5zm3 3a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm11 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm1-6h-4V9h2l2 3v1z"/></svg>
+        </div>
+        <h3>Supplier & Logistics</h3>
+        <p>Forging strong supply and delivery chains with local producers and logistics companies for efficiency and scale.</p>
+      </div>
+
+      <!-- Fashion & Retail -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Shirt SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M16 3l-4 2-4-2-4 3v4l2-1v13h12V9l2 1V6l-4-3z"/></svg>
+        </div>
+        <h3>Fashion & Retail</h3>
+        <p>Teaming up with creatives, boutiques, and stylists to elevate Signature Luxe's fashion-forward identity.</p>
+      </div>
+
+      <!-- Marketing & Co-Branding -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Bullhorn SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M2 8v8h4l5 5v-6h7l4-4-4-4H2zm2 2h12.17l1.41 1.41L16.17 14H4v-4z"/></svg>
+        </div>
+        <h3>Marketing & Co-Branding</h3>
+        <p>Joint campaigns and influencer collaborations that amplify brand stories and connect with broader audiences.</p>
+      </div>
+
+      <!-- CSR & NGO -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Heart Hands SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 
+          7.5 3c1.74 0 3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 
+          16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+          6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <h3>CSR & Community</h3>
+        <p>Supporting social initiatives in education, health, and sustainability to build a better future with our partners.</p>
+      </div>
+
+      <!-- Government & Policy -->
+      <div class="partnership-card">
+        <div class="icon">
+          <!-- Government Building SVG -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#002855" viewBox="0 0 24 24"><path d="M12 2 1 7v2h22V7L12 2zM3 10v10h3v-8h2v8h3v-8h2v8h3v-8h2v8h3V10H3z"/></svg>
+        </div>
+        <h3>Government & Policy</h3>
+        <p>Collaborating with public institutions on national development, skilling, and youth empowerment programs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="partnership-cta">
+      <p class="cta-message">
+        Ready to make a meaningful impact? Join us in shaping a brighter future through partnership and innovation.
+      </p>
+      <a href="/join/" class="btn btn-primary">Become a Partner</a>
+    </div>
+</div>
+</section> 
+
+ <footer class="footer">
+  <div class="footer-col logo">
+    <img src="/ones.png" alt="Bree Holdings Logo">
+    <small>Strategic ventures. Sustainable impact.</small>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/ventures/">Ventures</a>
+    <a href="/news/">Insights</a>
+    <a href="/partner/">Partner</a>
     <a href="/contact/">Contact</a>
-  </nav>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <p><i class="fas fa-envelope"></i> info@breeholdings.com</a></p>
+    <p><i class="fas fa-phone"></i> +256 700 000 000</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex</p>
+    <p>Ntinda-Kisasi Rd, K'la (U)</p>
+  </div>
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://facebook.com/DripPlugOfficialPage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/breeholdings_official?igsh=MWFiaWpyNzdnd3Zydw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/breeholdings" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/256790276170" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <div class="footer-bottom">
+    &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
+  </div>
+</div>
+</footer>
 
-  <main>
-    <h1>Bree Holdings Partnership Program</h1>
-    <p>
-      At <strong>Bree Holdings</strong>, we believe in building powerful, lasting relationships that foster growth and innovation across industries. Our partnership program is designed to collaborate with individuals, startups, and organizations that align with our mission of advancing cutting-edge ventures in technology, education, lifestyle, and beyond.
-    </p>
-    <p>
-      As a Bree Partner, you gain access to exclusive resources, co-branding opportunities, priority collaborations across our ventures, and inclusion in our high-impact ecosystem. Whether you’re looking to expand your services, invest, co-develop products, or simply align with a forward-thinking brand, we welcome your interest.
-    </p>
-    <p>
-      If you're ready to grow with us and create meaningful impact, download our partnership documents below to get started.
-    </p>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+      }
+
+      function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      document.querySelector('.hero-controls button:first-child').addEventListener('click', () => changeSlide(-1));
+      document.querySelector('.hero-controls button:last-child').addEventListener('click', () => changeSlide(1));
+
+      setInterval(() => {
+        changeSlide(1);
+      }, 10000);
+    });
   
-    <section>
-      <h2>Download Partnership Documents</h2>
-      <div class="download-section">
-        <a href="/docs/partnership-guidelines.pdf" class="download-link" download>Download Partnership Guidelines</a>
-        <a href="/docs/nda-agreement.pdf" class="download-link" download>Download NDA Agreement</a>
-        <a href="/docs/partnership-application.pdf" class="download-link" download>Download Partnership Application Form</a>
-      </div>
-    </section>
-  </main>
-  
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
 
-  <footer>
-    <div class="footer-section footer-links">
-      <h4>Quick Links</h4>
-      <a href="/team/">Team</a>
-      <a href="/News/">News</a>
-      <a href="/Testimonies/">Testimonies</a>
-    </div>
+  function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 
-    <div class="footer-section">
-      <h4>Contact Us</h4>
-      <p>Email: info@breeholdings.com</p>
-      <p>Phone: +256 790 276170</p>
-    </div>
-
-    <div class="footer-section">
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="https://x.com/BreeHoldings" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://instagram.com/breeholdings_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/256790276170" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://linkedin.com/in/bree-holdings-0a3456209/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-section newsletter">
-      <h4>Newsletter</h4>
-      <form>
-        <input type="email" placeholder="Your email address" required />
-        <br />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </footer>
+  // Optional: auto-slide every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+</script>
 
 </body>
 </html>
