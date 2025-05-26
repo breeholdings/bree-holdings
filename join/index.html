@@ -1,1 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bree Holdings</title>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --primary-color: #0a1f44;
+      --accent-color: #f2b705;
+      --text-color: #333;
+      --background-color: white;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--background-color);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .header-logo img {
+      height: 60px; /* adjust as needed */
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .header-button {
+      padding: 10px 10px !important; /* !important to override other styles */
+      font-size: 0.9rem !important;
+      border-radius: 3px !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: var(--primary-color);
+      margin: 4px 0;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .mobile-nav a {
+      margin: 10px 0;
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+    }
+
+    .cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1em;
+  color: white;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+    .hero-section {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  background-image: url('https://i.pinimg.com/736x/5a/66/9a/5a669ad4a3cea672a7e66434cf5265d0.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.join-main {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.join-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.join-header h1 {
+  font-size: 2.5rem;
+  color: #002855;
+  margin-bottom: 15px;
+}
+
+.join-header p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.partner-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.benefit-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+  fill: #002855;
+}
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  color: #002855;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.join-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.join-cta h2 {
+  font-size: 1.8rem;
+  color: #002855;
+  margin-bottom: 10px;
+}
+
+.join-cta p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.partner-form {
+  max-width: 700px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.partner-form input,
+.partner-form select,
+.partner-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.partner-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.partner-form button {
+  background-color: #002855;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.partner-form button:hover {
+  background-color: #004080;
+}
+
+.success-message {
+  background-color: #e6ffed;
+  color: #217a3b;
+  border: 1px solid #b5e5c0;
+  padding: 12px 18px;
+  margin: 20px auto;
+  max-width: 700px;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .footer .footer-col {
+      flex: 1 1 250px;
+    }
+
+    .footer .logo img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    .footer .logo small {
+      display: block;
+      color: #ccc;
+      margin-top: 5px;
+    }
+
+    .footer h4 {
+      margin-bottom: 15px;
+      color: var(--accent-color);
+    }
+
+    .footer a {
+      color: #eee;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 15px;
+      color: #fff;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .footer-bottom {
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="header-logo">
+     <img src="/logo.PNG" alt="Bree Holdings Logo">
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
+    </nav>
+    <div class="menu-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-nav">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/ventures/">Ventures</a>
+      <a href="/news/">Insights</a>
+      <a href="/partner/">Partner</a>
+      <a href="/contact/">Contact</a>
+       <a href="/partner/" class="cta-button header-button">Collaborate</a>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-content">
+    </div>
+  </section>
+
+  <section class="join-main">
+  <div class="container">
+    <div class="join-header">
+      <h1>Partner with Bree Holdings</h1>
+      <p>
+        We collaborate with ambitious businesses, institutions, and individuals who share our vision of innovation, growth, and positive impact. Let’s build the future together.
+      </p>
+    </div>
+
+    <div class="partner-benefits">
+      <div class="benefit-card">
+        <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0l8 5v10l-8 5-8-5V5l8-5zm0 2.2L5.7 6 12 9.8 18.3 6 12 2.2zM6 7.5v8.9l6 3.5 6-3.5V7.5L12 11 6 7.5z" fill="#002855"/></svg>
+        <h3>Mutual Growth</h3>
+        <p>Gain from shared resources, expertise, and business opportunities designed to elevate both parties.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 3H4C2.9 3 2 3.9 2 5v14a2 2 0 002 2h16a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V5l8 5 8-5v2z" fill="#002855"/></svg>
+        <h3>Strategic Collaboration</h3>
+        <p>Work with a team that values innovation, transparency, and long-term partnership success.</p>
+      </div>
+      <div class="benefit-card">
+        <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 12h7v2h-7v7h-2v-7H4v-2h7V5h2v7z" fill="#002855"/></svg>
+        <h3>Shared Impact</h3>
+        <p>Create lasting change in industries and communities through joint initiatives and investments.</p>
+      </div>
+    </div>
+
+    <div class="join-cta">
+      <h2>Ready to collaborate?</h2>
+      <p>Fill out the form below and let’s explore what we can build together.</p>
+    </div>
+
+    <!-- Partnership Form -->
+
+<form id="partner-form" action="https://formspree.io/f/xdkgrwnl" method="POST" class="partner-form">
+  <input type="text" name="name" placeholder="Your Full Name" required />
+  <input type="email" name="email" placeholder="Your Email Address" required />
+  <input type="text" name="company" placeholder="Your Company/Organization" required />
+
+  <select name="partnership-type" required>
+    <option value="" disabled selected>Select Partnership Type</option>
+    <option value="investment">Investment</option>
+    <option value="sponsorship">Sponsorship</option>
+    <option value="strategic">Strategic Alliance</option>
+    <option value="joint">Joint Venture</option>
+    <option value="other">Other</option>
+  </select>
+
+  <textarea name="message" rows="5" placeholder="Tell us about your proposal or interest..." required></textarea>
+  <button type="submit" class="btn btn-primary">Submit Partnership Inquiry</button>
+</form>
+
+<div id="success-message" style="display: none;" class="success-message">
+  ✅ Thank you! Your partnership inquiry has been submitted successfully.
+</div>
+
+  <script>
+  document.getElementById("partner-form").addEventListener("submit", async function (e) {
+    e.preventDefault(); // Prevent default submission
+
+    const form = e.target;
+    const data = new FormData(form);
+    const action = form.action;
+
+    try {
+      const response = await fetch(action, {
+        method: "POST",
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        document.getElementById("success-message").style.display = "block";
+        form.reset();
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("Failed to send message. Please check your connection.");
+    }
+  });
+</script>
+</section>
+
+ <footer class="footer">
+  <div class="footer-col logo">
+    <img src="/ones.png" alt="Bree Holdings Logo">
+    <small>Strategic ventures. Sustainable impact.</small>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/ventures/">Ventures</a>
+    <a href="/news/">Insights</a>
+    <a href="/partner/">Partner</a>
+    <a href="/contact/">Contact</a>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <p><i class="fas fa-envelope"></i> info@breeholdings.com</a></p>
+    <p><i class="fas fa-phone"></i> +256 700 000 000</a></p>
+    <p><i class="fas fa-map-marker-alt"></i> Three Sister's Complex</p>
+    <p>Ntinda-Kisasi Rd, K'la (U)</p>
+  </div>
+  <div class="footer-col">
+    <h4>Follow Us</h4>
+    <div class="social-icons">
+      <a href="https://facebook.com/DripPlugOfficialPage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/breeholdings_official?igsh=MWFiaWpyNzdnd3Zydw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/breeholdings" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/256790276170" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <hr style="border: 0; border-top: 1px solid #ccc; margin-top: 20px;">
+  <div class="footer-bottom">
+    &copy; 2025 Bree Holdings. All rights reserved. | Built and maintained by the Bree Holdings Web Team.
+  </div>
+</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.hero-slide');
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) slide.classList.add('active');
+        });
+      }
+
+      function changeSlide(direction) {
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      document.querySelector('.hero-controls button:first-child').addEventListener('click', () => changeSlide(-1));
+      document.querySelector('.hero-controls button:last-child').addEventListener('click', () => changeSlide(1));
+
+      setInterval(() => {
+        changeSlide(1);
+      }, 10000);
+    });
+  
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+
+  function changeSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Optional: auto-slide every 5 seconds
+  setInterval(() => changeSlide(1), 5000);
+</script>
+
+</body>
+</html>
