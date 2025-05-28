@@ -189,38 +189,48 @@
     }
 
     .about-content {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: space-between;
-    }
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .about-text, .about-image {
-      flex: 1;
-    }
+.about-text,
+.about-video {
+  flex: 1;
+}
 
-    .about-image img {
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-    }
+.about-video video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
 
-    @media (max-width: 768px) {
-      .about-content {
-        flex-wrap: wrap;
-        flex-direction: column;
-        text-align: center;
-      }
+/* Responsive styles */
+@media (max-width: 768px) {
+  .about-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+  }
 
-      .about-text, .about-image {
-        flex: 1 1 100%;
-      }
+  .about-text,
+  .about-video {
+    flex: 1 1 100%;
+  }
 
-      .about-image {
-        order: 2;
-      }
-    }
+  .about-video {
+    order: 2;
+  }
+
+  .about-video video {
+    margin: 0 auto; /* Center the video */
+  }
+}
+
 
     .venture-grid, .news-grid {
       display: grid;
@@ -407,12 +417,10 @@
         </p>
       </div>
       <div class="about-video">
-      <video src="bree-video.mp4" poster="logo.PNG" controls autoplay muted loop>
-        <video src="bree-video.mp4" controls autoplay muted loop>
+        <video src="birds.mp4" controls autoplay muted loop>
         Your browser does not support the video tag.
-      </video>
+       </video>
       </div>
-
     </div>
   </section>
 
